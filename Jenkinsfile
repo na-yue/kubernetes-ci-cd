@@ -11,6 +11,7 @@ node {
     registryHost = "195284793677.dkr.ecr.us-east-1.amazonaws.com/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
+    env.BUILD_TAG = tag
 
     stage "Build"
     
@@ -22,6 +23,5 @@ node {
 
     stage "Deploy"
 
-        kubernetesDeploy configs: "applications/${appName}/k8s/*.yaml", kubeconfigId: 'kenzan_kubeconfig'
-
+	sh "sed 's#__IMAGE__#'$BUILDIMG'#' applications/hello-kenzan/k8s/deployment.yaml | kubectl apply -f -
 }
