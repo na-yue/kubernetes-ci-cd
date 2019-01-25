@@ -30,7 +30,7 @@ spec:
         tier: hello-kenzan
     spec:
       containers:
-      - image: 127.0.0.1:30400/hello-success:latest
+      - image: 195284793677.dkr.ecr.us-east-1.amazonaws.com/my-image:latest
         name: hello-kenzan
         ports:
         - containerPort: 80
