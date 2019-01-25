@@ -30,7 +30,7 @@ spec:
         tier: hello-kenzan
     spec:
       containers:
-      - image: 195284793677.dkr.ecr.us-east-1.amazonaws.com/my-image:$BUILD_TAG
+      - image: 195284793677.dkr.ecr.us-east-1.amazonaws.com/my-image:BUILD_TAG
         name: hello-kenzan
         ports:
         - containerPort: 80
