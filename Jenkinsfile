@@ -7,7 +7,7 @@ node {
     sh "git rev-parse --short HEAD > commit-id"
 
     tag = readFile('commit-id').replace("\n", "").replace("\r", "")
-    appName = "hello-kenzan"
+    appName = "my-image"
     registryHost = "195284793677.dkr.ecr.us-east-1.amazonaws.com/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
